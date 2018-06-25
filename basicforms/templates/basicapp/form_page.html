@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Fill out the form!</h1>
+    <div class="container">
+      <form method= "post">
+      {{form.as_p}}
+      {% csrf_token %} <!-- we have our token secured-->
+      <input type="submit" class="btn btn-primary" value="submit">
+
+    </div>
+
+  </body>
+</html>
