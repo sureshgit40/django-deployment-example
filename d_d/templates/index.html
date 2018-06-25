@@ -1,0 +1,517 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/imgslide.css' %}" />
+<link rel="stylesheet" href="{% static 'css/mystyle.css' %}" />
+<link rel="stylesheet" href="{% static 'css/mystyle1.css' %}" />
+
+<style>
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+.navbar{
+  padding:0px!important;
+
+}
+.navbar-right {
+    float: right!important;
+    margin-right: 0px;
+  }
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+    border-radius:5px;
+    font-size:14px;
+  }
+  .navbar-nav > li.navbar-right {
+    float: right !important;
+  }
+  .nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 13px;
+    font-size: 12px;
+}
+}
+
+.logonav{
+  padding-bottom:20 !important;
+}
+.backside {
+    width: 255px;
+    height: 160px;
+    border-radius:10px 10px 10px 10px;
+    background-color: #ffffff;
+}
+#title
+{
+  background-color: white;
+  border:none;
+}
+#emblem
+{
+  padding-top:14px;
+}
+.img-fluid {
+    max-width: 47%;
+    height: auto;
+}
+</style>
+
+
+
+<nav class="navbar navbar-default" role="navigation" id="title">
+  <div class="container-fluid">
+    <div class="navbar-collapse collapse">
+      <div class="row">
+          <div class="col-md-1" id="emblem">
+            <ul class="nav navbar pull-left">
+             <img  src="{% static "image/emblem.jpg" %}" alt="card image" height="80px">
+            </ul>
+          </div>
+            <div class="col-md-9" align="center">
+                <h1  style="color:blue;padding-top:40px;font-size:38px;"><b>INTEGRATED HEALTHCARE DASHBOARD</b></h1>
+            </div>
+            <div class="col-md-2">
+              <ul class="nav navbar pull-right">
+               <img  src="{% static "image/NHM1.png" %}" alt="card image">
+              </ul>
+            </div>
+      </div>
+    </div>
+    </div>
+</nav>
+ <nav class="navbar navbar-default" role="navigation" id="kpi">
+   <div class="container-fluid">
+   <div class="navbar-collapse collapse">
+     <ul class="nav navbar pull-left">
+       <li class="navbar-right"><a href="{% url 'keyperformance' %}">KPIs</a></li>
+       <li class="navbar-right"><a href="{% url 'financial' %}">Financial Overview</a></li>
+       <li class="navbar-right"><a href="#">Data Analytics</a></li>
+       <li class="navbar-right"><a href="#">Search</a></li>
+       <li class="navbar-right"><a href="{% url 'department' %}">Departments</a></li>
+       <li class="navbar-right"><a href="{% url 'portfolio' %}">Health Portal</a></li>
+       <li class="navbar-right"><a href="{% url 'program' %}">Programmes & Schemes</a></li>
+       <li class="navbar-right"><a href="{% url 'district' %}">Districts/Zonal Reports</a></li>
+       <li class="navbar-right"><a href="#">Portfolio Best Performers Awards</a></li>
+      <li class="navbar-right"><a href="{% url 'help' %}">Help</a></li>
+      <li class="navbar-right"><a href="{% url 'calendar' %}">Events</a></li>
+     </ul>
+   </div>
+   </div>
+ </nav>
+
+
+
+ <div class="container-fluid">
+ 		<div class="col-md-12 content">
+          <div class="panel panel-default">
+              <section id="team" class="pb-5">
+                  <div class="container">
+                         <!---<h5 class="section-title h1">DASH BOARD</h5> ---->
+                      <div class="row">
+                         <!-- Team member -->
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                   <div class="mainflip">
+                                       <div class="frontside">
+                                           <div class="card">
+                                               <div class="card-body text-center">
+                                                   <p><img class=" img-fluid" height="150px" width="150px" src="{% static "family/family_health1.png" %}" alt="card image"></p>
+                                                   <h4 class="card-title">Indicator1</h4>
+
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <a href={% url "indicator_1" %}>
+                                       <div class="backside">
+                                         <div class="card">
+                                             <div class="card-body text-center">
+                                                 <p><img class=" img-fluid" src="{% static "family/family_health1.png" %}" alt="card image"></p>
+                                                 <h4 class="card-title">Indicator1</h4>
+                                             </div>
+                                         </div>
+                                       </div>
+                                     </a>
+                                   </div>
+                               </div>
+                           </div>
+                           <!-- ./Team member -->
+                           <!-- Team member -->
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                   <div class="mainflip">
+                                       <div class="frontside">
+                                           <div class="card">
+                                               <div class="card-body text-center">
+                                                   <p><img class=" img-fluid" src="{% static "family/family_health2.png" %}" alt="card image"></p>
+                                                   <h4 class="card-title">Indicator2</h4>
+
+                                               </div>
+                                           </div>
+                                       </div>
+                                      <a href="">
+                                       <div class="backside">
+                                         <div class="card">
+                                             <div class="card-body text-center">
+                                                 <p><img class=" img-fluid" src="{% static "family/family_health2.png" %}" alt="card image"></p>
+                                                 <h4 class="card-title">Indicator2</h4>
+                                             </div>
+                                         </div>
+                                       </div>
+                                     </a>
+                                   </div>
+                               </div>
+                           </div>
+                           <!-- ./Team member -->
+                           <!-- Team member -->
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                   <div class="mainflip">
+                                       <div class="frontside">
+                                           <div class="card">
+                                               <div class="card-body text-center">
+                                                   <p><img class=" img-fluid" src="{% static "family/family_health3.png" %}" alt="card image"></p>
+                                                   <h4 class="card-title">Indicator3</h4>
+
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <a href="">
+                                         <div class="backside">
+                                           <div class="card">
+                                               <div class="card-body text-center">
+                                                   <p><img class=" img-fluid" src="{% static "family/family_health3.png" %}" alt="card image"></p>
+                                                   <h4 class="card-title">Indicator3</h4>
+                                               </div>
+                                           </div>
+                                         </div>
+                                     </a>
+                                   </div>
+                               </div>
+                           </div>
+                           <!-- ./Team member -->
+                           <!-- Team member -->
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                   <div class="mainflip">
+                                       <div class="frontside">
+                                           <div class="card">
+                                               <div class="card-body text-center">
+                                                   <p><img class=" img-fluid" src="{% static "family/family_health4.png" %}" alt="card image"></p>
+                                                   <h4 class="card-title">Indicator4</h4>
+
+
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="backside">
+                                         <div class="card">
+                                             <div class="card-body text-center">
+                                                 <p><img class=" img-fluid" src="{% static "family/family_health4.png" %}" alt="card image"></p>
+                                                 <h4 class="card-title">Indicator4</h4>
+                                             </div>
+                                         </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                        </div>
+            <div class="row">
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static "graph/jk1.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 5</h4>
+
+                                   </div>
+                               </div>
+                           </div>
+                           <a href="{% url "keyperformance" %}">
+                           <div class="backside">
+                             <div class="card">
+                                 <div class="card-body text-center">
+                                     <p><img class=" img-fluid" src="{% static  "graph/jk2.png" %}" alt="card image"></p>
+                                     <h4 class="card-title">Indicator 5</h4>
+                                 </div>
+                             </div>
+                           </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+
+               <!-- ./Team member -->
+               <!-- Team member -->
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static "graph/jk2.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 6</h4>
+
+                                   </div>
+                               </div>
+                           </div>
+                           <a href="">
+                             <div class="backside">
+                               <div class="backside">
+                                 <div class="card">
+                                     <div class="card-body text-center">
+                                         <p><img class=" img-fluid" src="{% static  "graph/jk2.png" %}" alt="card image"></p>
+                                         <h4 class="card-title">Indicator 6</h4>
+                                     </div>
+                                 </div>
+                               </div>
+                           </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+               <!-- ./Team member -->
+               <!-- Team member -->
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static "graph/jk3.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 7</h4>
+
+                                   </div>
+                               </div>
+                           </div>
+                          <a href="">
+                            <div class="backside">
+                              <div class="card">
+                                  <div class="card-body text-center">
+                                      <p><img class=" img-fluid" src="{% static  "graph/jk3.png" %}" alt="card image"></p>
+                                      <h4 class="card-title">Indicator 7</h4>
+                                  </div>
+                              </div>
+                            </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+               <!-- ./Team member -->
+               <!-- Team member -->
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static "graph/jk4.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 8</h4>
+
+
+                                   </div>
+                               </div>
+                           </div>
+                           <a href="">
+                             <div class="backside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static  "graph/jk4.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 8</h4>
+                                   </div>
+                               </div>
+                             </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+             </div>
+               <!-- ./Team member -->
+               <!-- Team member -->
+            <div class="row">
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static "pie/Financial2.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 9</h4>
+                                   </div>
+                               </div>
+                           </div>
+                           <a href="{% url "indicator_9" %}">
+                             <div class="backside">
+                             <div class="card">
+                                 <div class="card-body text-center">
+                                     <p><img class=" img-fluid" src="{% static  "pie/Financial2.png" %}" alt="card image"></p>
+                                     <h4 class="card-title">Indicator 9</h4>
+                                 </div>
+                             </div>
+                           </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+               <!-- ./Team member -->
+               <!-- Team member -->
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static "pie/Financial3.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 10</h4>
+                                   </div>
+                               </div>
+                           </div>
+                           <a href="">
+                             <div class="backside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static  "pie/Financial3.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 10</h4>
+                                   </div>
+                               </div>
+                             </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+               <!-- ./Team member -->
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static  "pie/Financial4.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 11</h4>
+                                   </div>
+                               </div>
+                           </div>
+                           <a href="">
+                            <div class="backside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static  "pie/Financial4.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 11</h4>
+                                   </div>
+                               </div>
+                             </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                       <div class="mainflip">
+                           <div class="frontside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static  "pie/Financial5.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 12</h4>
+                                   </div>
+                               </div>
+                           </div>
+                           <a href="">
+                            <div class="backside">
+                               <div class="card">
+                                   <div class="card-body text-center">
+                                       <p><img class=" img-fluid" src="{% static  "pie/Financial5.png" %}" alt="card image"></p>
+                                       <h4 class="card-title">Indicator 12</h4>
+                                   </div>
+                               </div>
+                             </div>
+                         </a>
+                       </div>
+                   </div>
+               </div>
+          </div>
+     </div>
+   </section>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid">
+   <div class='row'>
+      <div class="carousel slide media-carousel" id="media">
+        <div class="carousel-inner">
+          <div class="item  active">
+            <div class="row">
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/data.png" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/download.jpeg" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/hmis.jpg" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/images.png" %}"></a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/m.png" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/medical.jpg" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/NHM.jpeg" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/prime-minster-relief-fund.jpg" %}"></a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/two.jpg" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/download.jpeg" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/NHM.jpeg" %}"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="thumbnail" href="#"><img alt="" src="{% static "couro/images.png" %}"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#media" class="right carousel-control">›</a>
+      </div>
+
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('#media').carousel({
+    pause: true,
+    interval: 4000,
+  });
+});
+</script>
+
+  {% endblock %}

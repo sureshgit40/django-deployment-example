@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <style>
+  .footer{
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: black;
+     color: white;
+     text-align: center;
+     padding-top:20px;
+  }
+  .pages{
+    margin-top: 40px;
+    margin-bottm: 30px;
+  }
+  .pages>li
+  {
+    padding:5px;
+    font-size:13px;
+  }
+  @media (min-width: 768px){
+  .navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+}
+  </style>
+  <body>
+
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar pull-left">
+          <li class="navbar-right"><a href="#">Sitemap</a></li>
+          <li class="navbar-right"><a href="#">Feedback</a></li>
+          <li class="navbar-right"><a href="#">Home</a></li>
+        </ul>
+        <ul class="nav navbar pull-right">
+          <li class="navbar-right"><a href="#"><i class="fa fa-facebook-f" style="font-size:20px"></i></i></a></li>
+          <li class="navbar-right"><a href="#"><i class="fa fa-twitter-square" style="font-size:20px"></i></a></li>
+          <li class="navbar-right"><a href="#"><i class="fa fa-google-plus" style="font-size:20px;"></i></a></li>
+          <li class="navbar-right"><a href="#" style="font-size:14px;">Language</a></li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+
+
+    <div class="container-fluid">
+      {% block body_block %}
+
+      {% endblock %}
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Poor Patients-Financial Support</h4>
+          </div>
+          <div class="col-md-4">
+            <h4>Related Links</h4>
+          </div>
+          <div class="col-md-4">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+              <ul class="pages">
+                    <li><a href="https://mohfw.gov.in/poorpatientsfinancialassistan/health-ministers-cancer-patient-fund-csr">Health Minister Cancer Patient Fund-CSR</a></li>
+                    <li><a href="https://mohfw.gov.in/poorpatientsfinancialassistan/health-ministers-discretionary-grant-hmdg">Health Ministers Discretionary Grant(HMDG)</a></li>
+                    <li><a href="https://mohfw.gov.in/poorpatientsfinancialassistan/ran-health-ministers-cancer-patient-fund">RAN(Health Ministers Cancer Patient Fund)</a></li>
+                    <li><a href="https://mohfw.gov.in/poorpatientsfinancialassistan/rashtriya-arogya-nidhi">Rashtriya Arogya Nidhi</a></li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+              <ul class="pages">
+                <li><a href="http://cancerindia.org.in/">National Institute of Cancer Prevention and Research (NICPR)</a></li>
+                <li><a href="http://a2hp.mohfw.gov.in/">Allied healthcare Professional Database</a></li>
+                <li><a href="https://www.omnicuris.com/academics/advanced-clinical-oncology">Online Oncology Tutorial Series</a></li>
+                <li><a href="http://dghs.gov.in/">Directorate General Health of Services</a></li>
+                <li><a href="http://healthpolicy.nhp.gov.in/auth/login?path=dashboardhttp://healthpolicy.nhp.gov.in/auth/login?path=dashboard">MIS for National Health Policy Framework 2017</a></li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+              <ul class="pages">
+                <li><a href="https://tbcindia.gov.in/">Tuberculosis Control-India (TBC-India)</a></li>
+                <li><a href="http://nadrsgis1.nic.in/scheme/">Nursing Scheme Monitoring Software</a></li>
+                <li><a href="http://pmssy-mohfw.nic.in/">Pradhan Mantri Swasthya Suraksha Yojana - PMSSY</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
